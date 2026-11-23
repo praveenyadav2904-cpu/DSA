@@ -1,0 +1,23 @@
+class Solution {
+public:
+    int lengthOfLongestSubstring(string s) {
+        vector<bool>count(256,0);
+        int len=0,first=0,second=0;
+
+        while(second<s.size()){
+            while(count[s[second]]){
+                count[s[first]]=0;
+                first++;
+            }
+            count[s[second]]=1;
+          
+            len=max(len,second-first+1);
+              second++;
+        }
+        return len;
+    }
+};
+
+// Synced seamlessly with LeetHub Pro
+// Pro features: https://bit.ly/leethubpro | Free version: https://bit.ly/leethubv4
+// Get it here: https://chromewebstore.google.com/detail/bcilpkkbokcopmabingnndookdogmbna
