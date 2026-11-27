@@ -18,7 +18,7 @@ class Solution {
         Node *temp=head;
         while(temp->next!=NULL){
             temp=temp->next;
-           
+            count++;
         }
         return count+1;
     }
